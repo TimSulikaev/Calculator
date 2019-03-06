@@ -11,10 +11,10 @@
 
 Пример работы программы:
 Enter expression: (x+y)/4*5
-<< OK
->> x = 4
-<< OK
->> y = 8
-<< OK
->> calculate
-<< 15
+ОК
+x = 4
+OK
+y = 8
+ОК
+calculate
+15
