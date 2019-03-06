@@ -6,7 +6,7 @@
 #include "AST.h"
 
 /*
-В данном файле описываются правила разбора выражения:
+Р’ РґР°РЅРЅРѕРј С„Р°Р№Р»Рµ РѕРїРёСЃС‹РІР°СЋС‚СЃСЏ РїСЂР°РІРёР»Р° СЂР°Р·Р±РѕСЂР° РІС‹СЂР°Р¶РµРЅРёСЏ:
 EXP    -> TERM EXP1
 EXP1   -> + TERM EXP1  
           - TERM EXP1  
@@ -158,19 +158,19 @@ private:
 		m_crtToken.Value = 0;
 		m_crtToken.Symbol = 0;
 
-		if(m_Text[m_Index] == 0) { //если это конец строки
+		if(m_Text[m_Index] == 0) { //РµСЃР»Рё СЌС‚Рѕ РєРѕРЅРµС† СЃС‚СЂРѕРєРё
 			m_crtToken.Type = EndOfText;
 			return;
 		}
 
-		if(isdigit(m_Text[m_Index])) { //если это число
+		if(isdigit(m_Text[m_Index])) { //РµСЃР»Рё СЌС‚Рѕ С‡РёСЃР»Рѕ
 			m_crtToken.Type = Number;
 			m_crtToken.Value = GetNumber();
 			m_crtToken.Symbol = NULL;
 			return;
 		}
 
-		if(isalpha(m_Text[m_Index])){ //если это переменная
+		if(isalpha(m_Text[m_Index])){ //РµСЃР»Рё СЌС‚Рѕ РїРµСЂРµРјРµРЅРЅР°СЏ
 			m_crtToken.Type = Variable;
 			m_crtToken.Value = 0;
 			m_crtToken.Symbol = GetSymbol();
@@ -199,7 +199,7 @@ private:
 		}
 	}
 
-	double GetNumber() { //считывание числа (в том числе и вещественного)
+	double GetNumber() { //СЃС‡РёС‚С‹РІР°РЅРёРµ С‡РёСЃР»Р° (РІ С‚РѕРј С‡РёСЃР»Рµ Рё РІРµС‰РµСЃС‚РІРµРЅРЅРѕРіРѕ)
 		SkipWhitespaces();
 
 		int index = m_Index;
@@ -219,7 +219,7 @@ private:
 		return atof(buffer);
 	}
 
-	char GetSymbol() { //считываение переменной
+	char GetSymbol() { //СЃС‡РёС‚С‹РІР°РµРЅРёРµ РїРµСЂРµРјРµРЅРЅРѕР№
 		SkipWhitespaces();
 
 		int index = m_Index;

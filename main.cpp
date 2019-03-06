@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void Calculate(const char* text){  //функция вывода результата выражения
+void Calculate(const char* text){  //Р’С‹С‡РёСЃР»РµРЅРёРµ РІС‹СЂР°Р¶РµРЅРёСЏ
 	Parser parser;
 
 	try {
@@ -40,7 +40,7 @@ void interact_input() {
 
 void cmd_args(const int c, const char ** v){
 	char argtostr[256] = "";
-	for (int i = 1; i < c; i++) { //нулевой элемент не считываем
+	for (int i = 1; i < c; i++) { //РЅСѓР»РµРІРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЃС‡РёС‚С‹РІР°РµРј
 		strcat_s(argtostr, sizeof(argtostr), v[i]);
 	}
 	Calculate(argtostr);

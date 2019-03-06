@@ -1,6 +1,6 @@
 #pragma once
 
-enum TokenType { //Идентификаторы
+enum TokenType { //РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂС‹
 	Error,
 	Plus,
 	Minus,
@@ -13,7 +13,7 @@ enum TokenType { //Идентификаторы
 	Number
 };
 
-struct Token { //Структура для хранения идетификаторов
+struct Token { //РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РёРґРµС‚РёС„РёРєР°С‚РѕСЂРѕРІ
 	TokenType Type;
 	double Value;
 	char Symbol;
@@ -22,7 +22,7 @@ struct Token { //Структура для хранения идетификаторов
 	{}
 };
 
-enum ASTNodeType { //Типы веток (для приоритетов)
+enum ASTNodeType { //РўРёРїС‹ РІРµС‚РѕРє (РґР»СЏ РїСЂРёРѕСЂРёС‚РµС‚РѕРІ)
 	Undefined,
 	OperatorPlus,
 	OperatorMinus,
@@ -32,19 +32,19 @@ enum ASTNodeType { //Типы веток (для приоритетов)
 	NumberValue
 };
 
-struct ValueType{ //Тип значения
-	double number; //для чисел
-	char var; // для переменных
+struct ValueType{ //РўРёРї Р·РЅР°С‡РµРЅРёСЏ
+	double number; //РґР»СЏ С‡РёСЃРµР»
+	char var; // РґР»СЏ РїРµСЂРµРјРµРЅРЅС‹С…
 };
 
-class ASTNode { //Класс синтаксического дерева
+class ASTNode { //РљР»Р°СЃСЃ СЃРёРЅС‚Р°РєСЃРёС‡РµСЃРєРѕРіРѕ РґРµСЂРµРІР°
 	public:
 		ASTNodeType Type;
 		ValueType Value;
 		ASTNode* Left;
 		ASTNode* Right;
 
-		ASTNode(){ //Конструктор для ветки 
+		ASTNode(){ //РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РІРµС‚РєРё 
 			Type = Undefined;
 			Value.number = 0;
 			Value.var = NULL;
@@ -52,7 +52,7 @@ class ASTNode { //Класс синтаксического дерева
 			Right = nullptr;
 		}
 
-		~ASTNode(){ //Деструктор
+		~ASTNode(){ //Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 			delete Left;
 			delete Right;
 		}

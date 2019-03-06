@@ -8,7 +8,7 @@ public:
 		}
 };
 
-class Evaluator { //класс обхода дерева и вычисления выражения
+class Evaluator { //РєР»Р°СЃСЃ РѕР±С…РѕРґР° РґРµСЂРµРІР° Рё РІС‹С‡РёСЃР»РµРЅРёСЏ РІС‹СЂР°Р¶РµРЅРёСЏ
 	double EvaluateSubtree(ASTNode* ast){
 		if(ast == NULL) 
 			throw EvaluatorException("Incorrect syntax tree!");
